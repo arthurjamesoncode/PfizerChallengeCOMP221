@@ -6,10 +6,10 @@ USE PfizerChallengeCOMP221;
 DROP TABLE IF EXISTS BugReports;
 DROP TABLE IF EXISTS Tests;
 DROP TABLE IF EXISTS TestScripts;
-DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS Testers;
 
--- 1. Users Table
-CREATE TABLE Users (
+-- 1. Testers Table
+CREATE TABLE Testers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL
@@ -21,7 +21,7 @@ CREATE TABLE TestScripts (
     label VARCHAR(255) NOT NULL,
     assigned INT,
     CONSTRAINT fk_testscripts_user 
-        FOREIGN KEY (assigned) REFERENCES Users(id) 
+        FOREIGN KEY (assigned) REFERENCES Testers(id) 
         ON DELETE SET NULL 
         ON UPDATE CASCADE
 );
@@ -41,7 +41,7 @@ CREATE TABLE Tests (
 
 -- 4. BugReports Table
 CREATE TABLE BugReports (
-    test INT NOT NULL,
+    test INT AUTO_INCREMENT PRIMARY KEY,
     report_text TEXT,
     submitted_by INT NOT NULL,
     CONSTRAINT fk_bugreports_test 
@@ -49,7 +49,7 @@ CREATE TABLE BugReports (
         ON DELETE CASCADE 
         ON UPDATE CASCADE,
     CONSTRAINT fk_bugreports_user 
-        FOREIGN KEY (submitted_by) REFERENCES Users(id) 
+        FOREIGN KEY (submitted_by) REFERENCES Testers(id) 
         ON DELETE CASCADE 
         ON UPDATE CASCADE
 );

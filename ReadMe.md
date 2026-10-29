@@ -33,6 +33,7 @@ Information is not useful if:
 - Duplicate Report (Stretch Goal)
 
 ### Stretch Goals
+- Show bug reports, with sorting by User and Test
 - Real time duplicate flagging
 - Marking responses as known bugs before submission
 

@@ -103,7 +103,7 @@ venv\Scripts\activate
 
 On mac, linux, or windows git bash run
 ```
-source venvScripts/activate
+source venv/Scripts/activate
 ```
 
 Once done you should see `(venv)` written above your prompt in the command line. If not, something has gone wrong.
@@ -112,6 +112,19 @@ After this, you need to install the requirements with
 ```
 pip install -r requirements.txt 
 ```
+
+You also need to add environment variables as a `.env` file in the `server` folder. It should look like this, but double check that the port and database user is right.
+```
+DEBUG=True
+SECRET_KEY=your_secret_key
+DB_NAME=PfizerChallengeCOMP221
+DB_USER=root
+DB_PASSWORD=your_password_here
+DB_HOST=localhost
+DB_PORT=3306
+```
+
+The secret key doesn't matter, since this is never going up publicly. I'm posting the one I used in teams, or you can generate your own at [this website](https://djecrety.ir/). I could just include it here but that feels wrong, since secrets should never be in version control.
 
 Now everything should be set up to run. You can run the server with
 ```

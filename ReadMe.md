@@ -20,11 +20,17 @@ Essential for Guided testing app:
 - On each task it provides the description of the task, and the expected result along with a success or failure button,
 - On success move on to next item in script
 - On failure allow entry of information, and ask if it was critical failure. 
-- AI assessment of if information entered is useful.
+- AI assessment of if information entered is useful
 - If yes, skip to end.
 - If no, continue with the rest of the test cases.
 - At the end show a summary of the test cases and responses.
 - Return to home page.
+
+Information is not useful if:
+- Evidence is thin
+- Bug is not actionable
+- Already Known (Stretch Goal)
+- Duplicate Report (Stretch Goal)
 
 ### Stretch Goals
 - Real time duplicate flagging
@@ -50,3 +56,10 @@ Example Test Scripts Object
   }
 }
 ```
+
+### Division of Labour
+- Arthur: Server & Database
+- Ashwin & Ayush: Front End
+- Anton: AI Integration
+- Dawei: Script
+- Nameer: Video

@@ -39,7 +39,7 @@ This should be an list:
 - User assigned to each test
 
 Example Test Scripts Object
-```
+```json
 {
   "Testers": ["Steve", "Bob", "Sarah"]
   "Tests": {

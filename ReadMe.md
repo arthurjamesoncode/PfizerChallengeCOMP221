@@ -12,6 +12,19 @@ Essential for Guided testing app:
 - On submit send the text to a server database storing text, the user, test number
 - On completion show summary.
 
+### Flow of App
+- On open, some prompt to select a specific tester
+- On selection, shows all tests assigned to that tester
+- Tester can select a specific test script
+- Works through the test script one task at a time
+- On each task it provides the description of the task, and the expected result along with a success or failure button,
+- On success move on to next item in script
+- On failure allow entry of information, and ask if it was critical failure. 
+- If yes, skip to end.
+- If no, continue with the rest of the test cases.
+- At the end show a summary of the test cases and responses.
+- Return to home page.
+
 ### Tests Scripts Format
 This should be an list:
 - Tests

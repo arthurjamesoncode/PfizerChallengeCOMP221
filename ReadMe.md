@@ -10,6 +10,25 @@ Essential for Guided testing app:
 - Show expected output and give a button that says yes or no
 - If yes is selected, do nothing, if no is selected offer a text box and submit button
 - On submit send the text to a server database storing text, the user, test number
-- On completion show summary
+- On completion show summary.
 
-### Script 
+### Tests Scripts Format
+This should be an list:
+- Tests
+- User assigned to each test
+
+Example Test Scripts Object
+```
+{
+  "Testers": ["Steve", "Bob", "Sarah"]
+  "Tests": {
+    "Assigned": "Steve"
+    "Tasks": [
+      {
+        "Description": "Open App", 
+        "Expected": "Should Open to Homepage"
+      }
+    ]
+  }
+}
+```

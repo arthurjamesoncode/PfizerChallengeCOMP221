@@ -122,7 +122,8 @@ http://127.0.0.1:5173/?mode=live
 ```
 
 The footer will read **Connected to http://127.0.0.1:8000/api**. If the tester list appears,
-you're done.
+you're done. If it has not appeared then you need to execute the mock_data.sql file. Then
+refresh the page.
 
 To make live mode the default instead of passing the URL every time, edit
 `src/config.js`:
@@ -142,7 +143,7 @@ http://127.0.0.1:5173/?mode=live&api=http://192.168.1.20:8000/api
 > **Note:** the backend in `server.zip` had four bugs that stopped live mode working end
 > to end — two routes and two serializers pointed at the wrong models, and the
 > `BugReports` table had no `id` column. All four are **fixed** in
-> `C:\Users\ashis\Downloads\server`, and live mode was verified end to end after the fix.
+> `C:\Users\YOURNAME\Downloads\server`, and live mode was verified end to end after the fix.
 > What changed, and how it was tested, is in
 > [`docs/backend-integration.md`](docs/backend-integration.md#backend-fixes-already-applied).
 
@@ -152,10 +153,9 @@ The frontend is on port 5173 and Django is on port 8000, so the browser treats t
 different origins. Without this step the app shows a connection error and the browser
 console says something about **CORS**.
 
-**Already done** in `C:\Users\ashis\Downloads\server`. If you are setting up a fresh copy
-of the backend, it needs:
+If you are setting up a fresh copy of the backend, it needs:
 
-In the backend's virtualenv:
+In the backend's virtualenv (you should run this command in the server directory in cmd or powershell)
 
 ```powershell
 pip install django-cors-headers
@@ -180,8 +180,8 @@ CORS_ALLOWED_ORIGINS = [
 ]
 ```
 
-Restart `runserver`. This is a backend change — mention it to whoever owns the server so it
-lands in the repo.
+Restart `runserver`. 
+Go to the cmd or powershell window that the server is running on
 
 ---
 

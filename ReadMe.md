@@ -6,7 +6,7 @@ The project plan was previously here, but I moved it to a separate markdown file
 
 ## DISCLAIMER
 
-UNFINISHED INSTRUCTIONS - I am still writing them.
+You need to have MYSQL and Python 3.9+
 
 If you have an existing PfizerChallengeCOMP221 database then you need to run the UPGRADE_DB.sql file to fix
 prievous errors with the backend that has now been fixed.
@@ -15,7 +15,9 @@ If you have not created the database yet then you can just run the initialise_da
 correct.
 
 Also for those testing the application, make sure your root MYSQL password is the same as the one in the .env file
-you need for the backend to run
+you need for the backend to run.
+
+For instructions on running the guided testing and frontend go to the [README](guided-testing/README.md) file in the [guided-testing folder](guided-testing)
 
 ## Server
 The server functions as a REST API. After the server is setup and run you can access it on the url displayed in the console. It should look something like below.
@@ -138,6 +140,8 @@ DB_PORT=3306
 ```
 
 The secret key doesn't matter, since this is never going up publicly. I'm posting the one I used in teams, or you can generate your own at [this website](https://djecrety.ir/). I could just include it here but that feels wrong, since secrets should never be in version control.
+
+You then need to execute the initialise_database.sql file so that the database is created.
 
 Now everything should be set up to run. You can run the server with
 ```

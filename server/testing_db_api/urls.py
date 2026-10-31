@@ -6,8 +6,8 @@ from .views import TestScriptViewSet, TestViewSet, TesterViewSet, BugReportViewS
 router = DefaultRouter()
 router.register(r'test_scripts', TestScriptViewSet, basename='test_script')
 router.register(r'tests', TestViewSet, basename="test")
-router.register(r'testers', TestViewSet, basename="tester")
-router.register(r'bug_reports', TestViewSet, basename="bug_report")
+router.register(r'testers', TesterViewSet, basename="tester")
+router.register(r'bug_reports', BugReportViewSet, basename="bug_report")
 
 urlpatterns = [
     path('', include(router.urls)),

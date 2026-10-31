@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <title>Guided Testing</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%234f46e5'/%3E%3Ctext x='16' y='21.5' font-family='system-ui,sans-serif' font-size='13' font-weight='700' fill='white' text-anchor='middle'%3EGT%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" id="brand-home" aria-label="Guided Testing home">
+      <span class="brand-mark" aria-hidden="true">GT</span>
+      <span class="brand-name">Guided Testing</span>
+    </a>
+    <div class="topbar-right" id="topbar-right"></div>
+  </header>
+
+  <main id="app" class="app"></main>
+
+  <footer class="footer">
+    <span class="footer-note">Prototype build &middot; frontend only</span>
+    <button class="link-btn" id="reset-demo" type="button">Reset demo data</button>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

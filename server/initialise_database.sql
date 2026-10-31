@@ -41,7 +41,8 @@ CREATE TABLE Tests (
 
 -- 4. BugReports Table
 CREATE TABLE BugReports (
-    test INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    test INT NOT NULL,
     report_text TEXT,
     submitted_by INT NOT NULL,
     CONSTRAINT fk_bugreports_test 

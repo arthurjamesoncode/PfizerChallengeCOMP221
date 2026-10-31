@@ -15,13 +15,16 @@ class TestSerializer(serializers.ModelSerializer):
     
 class TesterSerializer(serializers.ModelSerializer):
   class Meta:
-    model = TestScript
-    fields = ['id', 'label', 'assigned']
+    model = Tester
+    fields = ['id', 'first_name', 'last_name']
     read_only_fields = ['id']
+    # Testers can be imported with a single-word name ("Steve"), which arrives
+    # as first_name="Steve", last_name="". The column allows '' already.
+    extra_kwargs = {'last_name': {'allow_blank': True}}
     
 class BugReportSerializer(serializers.ModelSerializer):
   class Meta:
-    model = TestScript
+    model = BugReport
     fields = ['id', 'test', 'report_text', 'submitted_by']
     read_only_fields = ['id']
   

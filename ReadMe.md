@@ -4,6 +4,19 @@ Our idea is to create a guided testing app which automatically uploads tests to 
 
 The project plan was previously here, but I moved it to a separate markdown file. This file is now just for installation instructions and details of use. After completing the front end, please write a similar guide for how to install it on your machine. This is for the team members making the video/anyone else who wants to run it themselves.
 
+## DISCLAIMER
+
+UNFINISHED INSTRUCTIONS - I am still writing them.
+
+If you have an existing PfizerChallengeCOMP221 database then you need to run the UPGRADE_DB.sql file to fix
+prievous errors with the backend that has now been fixed.
+
+If you have not created the database yet then you can just run the initialise_database.sql file which is
+correct.
+
+Also for those testing the application, make sure your root MYSQL password is the same as the one in the .env file
+you need for the backend to run
+
 ## Server
 The server functions as a REST API. After the server is setup and run you can access it on the url displayed in the console. It should look something like below.
 
@@ -130,3 +143,4 @@ Now everything should be set up to run. You can run the server with
 ```
 python manage.py runserver
 ```
+

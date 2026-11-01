@@ -22,6 +22,7 @@
 import { CONFIG } from './config.js';
 import { TESTERS, TESTS } from './mock-data.js';
 import { assessReport } from './assessment.js';
+import { aiAssess, lastAssessment } from './ai/aiClient.js'; // AI integration (Anton)
 
 const FAILURES_KEY = 'gt.failures.v1';
 
@@ -277,7 +278,7 @@ const live = {
         ...payload,
         raw: created,
       },
-      assessment: assessReport(payload.note),
+      assessment: lastAssessment(payload.note) || assessReport(payload.note),
     };
   },
 
@@ -381,7 +382,7 @@ const live = {
 
   /** The usefulness check runs locally in live mode (move it server-side later). */
   async assess(note) {
-    return { assessment: assessReport(note) };
+    return { assessment: await aiAssess(note) }; // AI integration (Anton)
   },
 };
 
@@ -437,7 +438,7 @@ const mock = {
     const rows = readFailures();
     rows.push(failure);
     writeFailures(rows);
-    return { failure, assessment: assessReport(payload.note) };
+    return { failure, assessment: lastAssessment(payload.note) || assessReport(payload.note) };
   },
 
   async completeSession(session) {
@@ -452,7 +453,7 @@ const mock = {
 
   async assess(note) {
     await sleep(CONFIG.MOCK_LATENCY / 2);
-    return { assessment: assessReport(note) };
+    return { assessment: await aiAssess(note) }; // AI integration (Anton)
   },
 
   /** Same contract as the live adapter, but written into the bundled demo arrays. */
